@@ -1,0 +1,28 @@
+<!-- 
+  Extensions to support flagging of @status values.
+  
+  Extends preprocessing that enables @status flagging generally.
+  
+  Extends the HTML flagging process to support value of line-through
+  for @style on <prop>
+  
+  Copyright (c) 2016 DeltaXML
+  Licensed under Apache 2 license
+  
+  -->
+<plugin id="org.dita-community.flagging.status">
+  
+  <feature extension="package.support.name" value="Eliot Kimber"/>
+  <feature extension="package.support.email" value="ekimber@contrext.com"/>  
+
+  <!-- PDF2 plugin extensions: -->
+  <feature extension="dita.xsl.topicpull"
+    value="xsl/topicpull-extensions.xsl" 
+      type="file"
+  />
+  <feature extension="dita.xsl.xhtml"
+    value="xsl/htmlflag-extensions.xsl"
+    type="file"
+  />
+      
+</plugin>
