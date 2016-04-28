@@ -13,14 +13,24 @@ you can do:
 <prop action="flag" att="status" val="deleted" color="red" style="line-through"/>
 {code}
 
-Note that the value "line-through" for @style is not supported in HTML by the base
-Open Toolkit. This plugin extends the 2.2.5+ HTML flagging code to implement
-the line-through style.
+NOTE: There is a bug in OT 2.2.4 that causes the flagging on @status values to not
+work (symptom is an XSLT error about incorrect return types in the flagging preprocessing
+part of the OT log). This bug is fixed in OT 2.2.5.
 
-## Open Toolkit Version Supported
+## Open Toolkit Versions Supported
 
-For general enabling of @status flagging, this plugin works with the 1.8.5 and
-2.x Open Toolkit versions.
+While the enabling of @status flagging works with the 1.8.5 and later versions of the
+OT, the ability to actually flag on @status values may work in 1.8.5 but will not work
+in the 1.x OT before 2.2.5 due to bugs in the flagging preprocessing added in OT 2.x.
 
-The HTML flagging extension to support line-through only works with OT 2.2.5 and
-newer. 
+This plugin works by adding "a(props status)" to the @domains value for every map and
+topic. This has the effect of making the flagging and filtering processors think that @status is
+a specialization of @props and thus something you can filter on or flag using normal
+DITAVAL files. While making this change to @domains is, technically, a lie, because @status
+is not a specialization of @props and is not defined in the DITA spec as an attribute that
+MUST allow filtering and flagging, it doesn't hurt anything because there is no processing
+other than filtering and flagging that cares about the @domains value.
+
+A more complete solution would be for the OT to provide more general extension points
+for enabling filtering and flagging on attributes other than those defined in the DITA 
+specification. Those extensions are planned for OT 2.3.  
