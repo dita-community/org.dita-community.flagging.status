@@ -21,7 +21,7 @@ part of the OT log). This bug is fixed in OT 2.2.5.
 
 While the enabling of @status flagging works with the 1.8.5 and later versions of the
 OT, the ability to actually flag on @status values may work in 1.8.5 but will not work
-in the 1.x OT before 2.2.5 due to bugs in the flagging preprocessing added in OT 2.x.
+in the 2.x OT before 2.2.5 due to bugs in the flagging preprocessing added in OT 2.x.
 
 This plugin works by adding "a(props status)" to the @domains value for every map and
 topic. This has the effect of making the flagging and filtering processors think that @status is
