@@ -1,5 +1,10 @@
 # Flagging on the @status attribute
 
+**OBSOLETE**
+
+As far as I can tell this plug-in is obsolete and no longer necesary and/or
+superceded by the org.dita-community.pdf.flagging plug-in.
+
 Enables flagging on the @status attribute value using normal ditaval mechanisms
 
 With this plugin installed you can use DITAVAL files to flag @status values
